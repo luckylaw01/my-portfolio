@@ -95,7 +95,7 @@ function deleteRecordDouble($table, $field1, $value1, $field2, $value2) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'];
     $table = $_POST['table'];
-    //$data = $_POST['data'];
+    $data = $_POST['data'];
     $field = $_POST['field'] ?? null;
     $value = $_POST['value'] ?? null;
     $field1 = $_POST['field1'] ?? null;

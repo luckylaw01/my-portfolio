@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die(json_encode(['error' => $conn->connect_error]));
 }
 else{
-   echo 'Database connected successfully';
+   
 }
 
 ?>
