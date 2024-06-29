@@ -14,8 +14,9 @@
         <input type="text" class="form-control" id="link" name="link" placeholder="Link" required>
     </div>
     <div class="mb-3">
-        <label for="image" class="form-label">Image URL</label>
-        <input type="text" class="form-control" id="image" name="image" placeholder="Image URL" required>
+        <label for="image" class="form-label">Image</label>
+        <input type="file" class="form-control" id="image" name="image" placeholder="Image URL" required>
+        <!-- <input type="text" class="form-control" id="image" name="image" placeholder="Image URL" required> -->
     </div>
     <div class="mb-3">
         <label for="category" class="form-label">Category</label>
