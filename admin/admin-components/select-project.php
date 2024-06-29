@@ -36,4 +36,20 @@
         $project_url = $project['project_url'];
     }
     }
+
+    function selectProjectByField($conn, $field, $value){
+        $sql = "SELECT * FROM projects WHERE $field = '$value'";
+        $result = mysqli_query($conn, $sql);
+
+        $rowCount = mysqli_num_rows($result);
+        if($rowCount <= 0){
+            echo 'No projects found';
+        }
+        else{
+            while ($row = mysqli_fetch_assoc($result)){
+                $data[] = $row; 
+            }
+        }
+        return $data;
+    }
 ?>

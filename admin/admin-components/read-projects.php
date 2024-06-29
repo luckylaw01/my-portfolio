@@ -1,6 +1,9 @@
 <!-- Use Bootstrap table to display the projects -->
+<h4>All Projects</h4>
+
 <table class="table table-striped table-hover table-bordered">
-    <thead class="thead-dark">
+    <thead class="thead-light bg-dark text-light">
+        <caption><i> Table 1.1 Projects </i></caption>
         <tr>
             <th>Id</th>
             <th>Title</th>
@@ -34,7 +37,12 @@
                     echo '<td>'.$project['client'].'</td>';
                     echo '<td>'.$project['project_date'].'</td>';
                     echo '<td>'.$project['project_url'].'</td>';
-                    echo '<td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger">Delete</button></td>';
+                    echo '<td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                               <button type="button" class="btn btn-primary"> <a href="#updateProjectForm" class="text-light link"><i class="fas fa-edit"></i> Edit </a></button>
+                                <button type="button" class="btn btn-danger"> <a href="#deleteProjectForm" class="text-light link"><i class="fas fa-trash-alt"></i> Delete </a></button>
+                            </div>
+                            </td>';
                     echo '</tr>';
                 }
             }

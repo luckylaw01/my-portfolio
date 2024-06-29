@@ -2,24 +2,18 @@
 <h4>Delete Project</h4>
 <form id="deleteProjectForm" class="mb-5">
     <div class="mb-3">
-        <label for="deleteId" class="form-label">ID</label>
-        <input type="number" class="form-control" id="deleteId" name="id" placeholder="ID" required>
+        <label for="deleteId" class="form-label">Select Project to Delete</label>
+        <!-- <input type="number" class="form-control" id="deleteId" name="id" placeholder="ID" required> -->
+        <select name="id" id="deleteId" class="form-control" placeholder="Select project" required type="number">
+            <?php 
+                foreach($projects as $project){
+                    echo '<option value="'.$project['id'].'">'.$project['title'].'</option>';
+                }
+            ?>
+            <p class="text-right">&circ;</p>
+         </select>
     </div>
     <button type="submit" class="btn btn-danger">Delete Project</button>
 </form>
 
-<!-- Delete Record by Double field -->
- <h4>Delete Project</h4>
-<form id="deleteProjectFormDouble" class="mb-5">
-    <div class="mb-3">
-        <label for="deleteIdDouble" class="form-label">ID</label>
-        <input type="number" class="form-control" id="deleteIdDouble" name="id" placeholder="ID" required>
-    </div>
-    <div class="mb-3">
-        <label for="deleteClientDouble" class="form-label">Client</label>
-        <input type="text" class="form-control" id="deleteClientDouble" name="client" placeholder="Client" required>
-    </div>
-    <button type="submit" class="btn btn-danger">Delete Project</button>
-</form>
-
-<script src="./back-end/delete-project-ajax.js"></script>
+<!-- Optional: Include Bootstrap JS and Popper.js for interactive components -->

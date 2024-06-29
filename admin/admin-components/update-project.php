@@ -1,9 +1,32 @@
 <!-- Update Record with single field-->
+
+<?php 
+    // include 'select-project.php';
+    $projects = selectAllProjects($conn);
+    foreach($projects as $project){
+        $project_id = $project['id'];
+        $project_title = $project['title'];
+        $project_description = $project['description'];
+        $project_link = $project['link'];
+        $project_image = $project['image'];
+        $project_category = $project['category'];
+        $project_client = $project['client'];
+        $project_last_updated = $project['project_date'];
+        $project_url = $project['project_url'];
+    }
+?>
  <h4 text-light bg-dark my-2 mx-2>Update By single criteria</h4>
 <form id="updateProjectForm" class="mb-5">
     <div class="mb-3">
-        <label for="updateId" class="form-label">ID</label>
-        <input type="number" class="form-control" id="updateId" name="id" placeholder="ID" required>
+        <label for="updateId" class="form-label">Select Project to Update</label>
+        <!-- <input type="number" class="form-control" id="updateId" name="id" placeholder="ID" required> -->
+         <select name="id" id="updateId" class="form-control" placeholder="Select project" required type="number">
+            <?php 
+                foreach($projects as $project){
+                    echo '<option value="'.$project['id'].'">'.$project['title'].'</option>';
+                }
+            ?>
+         </select>
     </div>
     <div class="mb-3">
         <label for="updateTitle" class="form-label">New Title</label>
@@ -40,9 +63,9 @@
     <button type="submit" class="btn btn-primary">Update Project</button>
 </form>
 
-<h4 text-light bg-dark my-2 mx-2>Update By single criteria</h4>
+<!-- <h4 text-light bg-dark my-2 mx-2>Update By single criteria</h4> -->
 <!-- Update Record with double field -->
-<form id="updateProjectFormDouble" class="mb-5">
+<!-- <form id="updateProjectFormDouble" class="mb-5">
     <div class="mb-3">
         <label for="updateIdDouble" class="form-label">ID</label>
         <input type="number" class="form-control" id="updateIdDouble" name="id" placeholder="ID" required>
@@ -80,6 +103,6 @@
         <input type="text" class="form-control" id="updateProjectUrlDouble" name="project_url" placeholder="New Project URL">
     </div>
     <button type="submit" class="btn btn-primary">Update Project</button>
-</form>
+</form> -->
 
 <script src="update-project-ajax.js"></script>
